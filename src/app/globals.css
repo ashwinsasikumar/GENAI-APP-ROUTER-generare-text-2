@@ -1,21 +1,92 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.chat-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px;
+  padding: 40px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+.chat-container h1 {
+  font-size: 24px;
+  text-align: center;
+  color: #3b76c4;
+  margin-bottom: 20px;
+}
+.chat-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.chat-form textarea {
+  width: 768px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+  resize: none;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.chat-form textarea:focus {
+  border-color: #1a73e8;
+}
+.chat-form button {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color:  #3b76c4;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.chat-form button:hover {
+  background-color: #1669c7;
+}
+
+.chat-form button:disabled {
+  background-color: #c0c0c0;
+  cursor: not-allowed;
+}
+.chat-response {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+}
+.chat-response h2 {
+  font-size: 20px;
+  color:  #3b76c4;
+  margin-bottom: 10px;
+}
+.chat-message {
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  font-size: 15px;
+  white-space: pre-wrap;
+}
+.chat-message.user {
+  background-color: #e7f3ff;
+  text-align: left;
+}
+.chat-message.ai {
+  background-color: #f1f3f4;
+  text-align: left;
 }
